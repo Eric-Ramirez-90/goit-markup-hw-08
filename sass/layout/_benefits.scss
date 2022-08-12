@@ -1,11 +1,38 @@
 .benefits__items {
-    display: flex;
     gap: var(--card-set-gap);
+
+    @media screen and (max-width: 767px) {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+   }
+
+
+.benefits__item {
+    @media screen and (max-width: 767px) {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        --item: 2;
+        flex-basis: calc((100% - var(--card-set-gap) * (var(--item) - 1)) / var(--item));
+    }
+
+    @media screen and (min-width: 1200px) {
+        --item: 4;
+        flex-basis: calc((100% - var(--card-set-gap) * (var(--item) - 1)) / var(--item));
+    }
+}
+    
+    
 }
 
 .benefits__thumb {
     display: flex;
-    width: 270px;
     height: 120px;
     justify-content: center;
     align-items: center;
@@ -14,6 +41,9 @@
     background-color: var(--team-background-color);
 
     border-radius: 4px;
+
+    
+
 }
 
 .benefits__icon {
@@ -28,4 +58,8 @@
     line-height: 1.14;
     color: var(--title-text-color);
     text-transform: uppercase;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;      
+    }
 }

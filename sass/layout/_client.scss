@@ -10,7 +10,7 @@
     }
 
     &__items {
-        display: flex;
+        // display: flex;
         gap: var(--card-set-gap);
     }
 
@@ -23,9 +23,9 @@
 }
 
 .client__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
 
     width: 170px;
     height: 92px;

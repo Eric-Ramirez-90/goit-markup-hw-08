@@ -2,17 +2,22 @@
     background-color: var(--team-background-color);
 
     &__headline {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
 
         color: var(--title-text-color);
 
-        font-size: 36px;
+        font-size: 28px;
         line-height: 1.16;
         text-align: center;
+
+        @media screen and (min-width: 1200px) {
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
     }
 
     &__items {
-        display: flex;
+        // display: flex;
         gap: var(--card-set-gap);
     }
 

@@ -6,13 +6,20 @@
         height: 60px;
 
     @media screen and (min-width: 768px) {
+        display: flex;
+        // justify-content: space-between;
+    }
+
+    @media screen and (min-width: 768px) {
         height: 80px;
     }
  }
 }
 
 .site-nav {
-    margin-bottom: auto;
+    @media screen and (max-width: 767px) {
+        margin-bottom: auto;
+    }
 }
 
 .site-nav__items {
@@ -72,12 +79,12 @@
 /* Contacts */
 .contacts {
     display: flex;
-    margin-bottom: 64px;
 
     @media screen and (max-width: 767px) {
         flex-wrap: wrap-reverse;
+        margin-bottom: 64px;
     }
- 
+
     &__icon {
         @media screen and (max-width: 767px) {
             display: none;
@@ -95,11 +102,15 @@
     }
 }
 
+.contacts__item:not(:first-child) {
+    margin-bottom: 32px;
+}
+
 
 
 .contacts__link {
     display: flex;
-    margin-bottom: 32px;
+    
 
     font-weight: 500;
     font-size: 24px;

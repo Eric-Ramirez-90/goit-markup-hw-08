@@ -1,3 +1,135 @@
 .page-header {
     border-bottom: 1px solid #ececec;
+    position: relative;
+
+    &__container {
+        height: 60px;
+
+    @media screen and (min-width: 768px) {
+        height: 80px;
+    }
+ }
+}
+
+.site-nav {
+    margin-bottom: auto;
+}
+
+.site-nav__items {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        gap: 50px;
+        margin-left: 93px;
+    }
+
+}
+
+.site-nav__link {
+
+    display: inline-block;
+    padding-bottom: 32px;
+
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--title-text-color);
+
+    transition: color 250ms var(--timing-function);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-text-color);
+    }
+
+    &--current {
+        color: var(--accent-text-color);
+    }
+
+    @media screen and (min-width: 768px) {
+        position: relative;
+        padding-top: 32px;
+        font-size: 14px;
+        
+        &--current::after {
+            display: inline-block;
+            content: '';
+    
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+    
+            width: 100%;
+            height: 4px;
+    
+            background-color: var(--accent-text-color);
+            border-radius: 2px;
+        }
+    }
+}
+
+
+/* Contacts */
+.contacts {
+    display: flex;
+    margin-bottom: 64px;
+
+    @media screen and (max-width: 767px) {
+        flex-wrap: wrap-reverse;
+    }
+ 
+    &__icon {
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+
+        @media screen and (min-width: 768px) {
+            margin-right: 8px;
+            fill: currentColor;
+        }
+
+        @media screen and (min-width: 1200px) {
+            margin-right: 10px;
+        }
+
+    }
+}
+
+
+
+.contacts__link {
+    display: flex;
+    margin-bottom: 32px;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--primary-text-color);
+
+    transition: color 250ms var(--timing-function);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-text-color);
+    }
+
+    @media screen and (min-width: 768px) {
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        font-size: 14px;
+    }
+        
+}
+
+.contacts__link--accent {
+    @media screen and (max-width: 767px) {
+        font-size: 34px;
+        line-height: 1.17;
+        color: var(--accent-text-color);
+    }
 }

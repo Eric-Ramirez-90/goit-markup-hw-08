@@ -154,9 +154,11 @@
 
     transition: color 250ms var(--timing-function);
 
-    &:hover,
-    &:focus {
-        color: var(--accent-text-color);
+    @media screen and (min-width: 768px) {
+        &:hover,
+        &:focus {
+            color: var(--accent-text-color);
+        }
     }
 
     @media screen and (min-width: 768px) {

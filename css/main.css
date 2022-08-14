@@ -73,7 +73,6 @@ img {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  outline: 1px solid red;
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -667,6 +666,22 @@ img {
             flex-direction: column;
   }
 }
+@media screen and (min-width: 768px) {
+  .page-header__mobile-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 88px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .page-header__mobile-menu {
+    margin-left: 93px;
+  }
+}
 
 .menu-btn {
   position: absolute;
@@ -766,6 +781,11 @@ img {
     margin-bottom: auto;
   }
 }
+@media screen and (min-width: 1200px) {
+  .site-nav {
+    margin-right: auto;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .site-nav__items {
@@ -773,10 +793,8 @@ img {
     display: -ms-flexbox;
     display: flex;
     gap: 50px;
-    margin-left: 93px;
   }
 }
-
 .site-nav__link {
   display: inline-block;
   padding-bottom: 32px;
@@ -826,6 +844,34 @@ img {
     margin-bottom: 64px;
   }
 }
+@media screen and (min-width: 768px) {
+  .contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 96px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contacts {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 30px;
+    margin-left: 315px;
+  }
+}
 @media screen and (max-width: 767px) {
   .contacts__icon {
     display: none;
@@ -843,8 +889,21 @@ img {
   }
 }
 
-.contacts__item:not(:first-child) {
-  margin-bottom: 32px;
+@media screen and (min-width: 768px) {
+  .contacts__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contacts__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contacts__item:not(:first-child) {
+    margin-bottom: 32px;
+  }
 }
 
 .contacts__link {
@@ -876,6 +935,8 @@ img {
 @media screen and (min-width: 1200px) {
   .contacts__link {
     font-size: 14px;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 }
 

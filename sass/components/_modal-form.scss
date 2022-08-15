@@ -8,7 +8,6 @@
     width: 100%;
     height: 100%;
 
-    padding: 94px 15px;
 
     background-color: rgba(0, 0, 0, 0.2);
 
@@ -18,12 +17,18 @@
     transition: opacity 250ms var(--timing-function),
         visibility 250ms var(--timing-function);
 
+    @media screen and (max-width: 767px) {
+        padding: 94px 15px;
+    }
+
     &__is-hidden .modal {
+        @media screen and (min-width: 768px) {
             transform: translate(-50%, -50%) scale(0.7);
         }
+    }    
 }
 
-/* is-hidden */
+    /* is-hidden */
 .backdrop__is-hidden {
     opacity: 0;
     visibility: hidden;
@@ -31,31 +36,41 @@
 }
 
 .modal {
-    // position: absolute;
-    // left: 50%;
-    // top: 50%;
+    position: relative;
 
-
-    // max-width: 450px;
+    max-width: 450px;
     min-height: 609px;
     padding: 40px;
 
     background-color: #ffffff;
-    // box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    //     0px 2px 1px rgba(0, 0, 0, 0.2);
-    // border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
 
-    // transform: translate(-50%, -50%) scale(1);
-    // transition: transform 400ms var(--timing-function);
+
+    @media screen and (min-width: 768px) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+
+        min-width: 450px;
+
+        transform: translate(-50%, -50%) scale(1);
+        transition: transform 400ms var(--timing-function);       
+    }
+
+    @media screen and (min-width: 1200px) {
+        min-width: 528px;
+        min-height: 581px;
+    }
 }
 
 .modal-btn {
-    // position: absolute;
-    // top: 8px;
-    // right: 8px;
-    // z-index: 100;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 100;
 
-    margin-left: auto;
 
     display: flex;
     justify-content: center;
@@ -98,9 +113,13 @@
     margin-bottom: 12px;
 
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
     color: var(--title-text-color);
     text-align: center;
+
+    @media screen and (min-width: 1200px) {
+        line-height: 1.15;
+    }
 }
 
 .modal-form__input-group {
@@ -190,24 +209,21 @@
     justify-content: center;
     gap: 8px;
     margin-bottom: 30px;
-    
-    @media screen and (max-width: 1199px) {
-        font-size: 12px;
-    }
 }
 
 .checkbox__icon {
-    display: block;
+    display: flex;
+    flex-shrink: 0;
 
     width: 16px;
     height: 15px;
 }
 
-.checkbox__input:focus+.checkbox__icon {
+.checkbox__input:focus + .checkbox__icon {
     outline: 1px solid var(--title-text-color);
 }
 
-.checkbox__input:checked+.checkbox__icon .icon-uncheck {
+.checkbox__input:checked + .checkbox__icon .icon-uncheck {
     opacity: 0;
     transition: opacity 250ms var(--timing-function);
 }
@@ -216,13 +232,20 @@
     opacity: 0;
     transition: opacity 250ms var(--timing-function);
 
-.checkbox__input:checked+.checkbox__icon & {
+.checkbox__input:checked + .checkbox__icon & {
         opacity: 1;
     }
 }
 
 .checkbox__text {
     user-select: none;
+    font-size: 12px;
+    line-height: 1.16;
+
+    @media screen and (min-width: 1200px) {
+            font-size: 14px;
+            line-height: 1.71;
+        }
 }
 
 .checkbox__link--color {
@@ -230,7 +253,7 @@
     text-underline-position: under;
 }
 
-/* Forn button */
+/* Form button */
 .modal-submit-btn {
     @extend %button;
     padding: 10px 52px;
@@ -238,7 +261,7 @@
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-    transition: 250ms var(--timing-function);
+    transition: background-color 250ms var(--timing-function);
 
     &:hover,
     &:focus {

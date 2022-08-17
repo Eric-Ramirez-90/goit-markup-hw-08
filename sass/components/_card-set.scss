@@ -81,7 +81,7 @@
     left: 0;
 
     padding: 63px 24px;
-
+    
     font-size: 18px;
     line-height: 1.55;
     letter-spacing: 0.03em;
@@ -92,11 +92,18 @@
     transform: translateY(100%);
     transition: transform 250ms var(--timing-function),
         opacity 250ms var(--timing-function);
-.card-set__link:hover &,
-.card-set__link:focus & {
-    opacity: 1;
-    transform: translateY(0);
-}
+
+    .card-set__link:hover &,
+    .card-set__link:focus & {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media screen and (max-width: 479px) {
+        font-size: 16px;
+        padding: 35px 15px;
+    }
+
 }
 
 .card__wrapper {
